@@ -24,8 +24,18 @@ class AddMeeting extends Component{
       
         alert("Meeting date: " + this.meetingdate.value+" start time: " +this.starttime.value+  "End Time: "+ this.endtime.value+"Desriptions: " +this.description.value);
         event.preventDefault();
+
+         
+        this.props.onChangedate(this.meetingdate.value);
       
-       
+           if(this.props.meetings.some((meet )=> meet.start_time=this.meetingdate.value)) 
+           {
+            alert('Slot not available');
+           }
+        else{
+            alert('Slot available');
+        }
+        
  
     }
  

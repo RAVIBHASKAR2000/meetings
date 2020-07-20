@@ -69,7 +69,7 @@ class Main extends Component{
                 isLoading = {this.props.meetings.isLoading}
               errMess={this.props.meetings.errMess}  date={this.state.date} onChangedate={(datechange)=> this.onDateChange(datechange)} />}  />
               
-              <Route exact path="/addmeeting" component={()=>  <AddMeeting meetings={this.props.meetings.meetings} />}/>
+              <Route exact path="/addmeeting" component={()=>  <AddMeeting meetings={this.props.meetings.meetings} onChangedate={(datechange)=> this.onDateChange(datechange)} />}/>
               <Redirect to="/home" />
 
               
